@@ -1,0 +1,18 @@
+
+<form [formGroup]="signupForm" class="form-signin">
+  <div class="form-row container">
+    <div class="col-sm-12">
+      <div class="text-center">
+        <h2>Registration</h2>
+      </div>
+      <app-valid-input [inputType]="'text'" [control]="signupForm.get('firstName')" [placeHolder]="'First Name'" ></app-valid-input>
+      <app-valid-input [inputType]="'text'" [control]="signupForm.get('lastName')" [placeHolder]="'Last Name'" ></app-valid-input>
+      <app-valid-input [inputType]="'email'" [control]="signupForm.get('email')" [placeHolder]="'Email'"></app-valid-input>
+      <app-valid-input [inputType]="'number'" [control]="signupForm.get('phoneNumber')" [placeHolder]="'Phone Number'"></app-valid-input>
+ 
+      <div class="col text-center m-2">
+          <button [disabled]="signupForm.invalid" (click)="submit()" class="btn btn-success">Submit</button>
+      </div>
+    </div>
+  </div>
+</form>
